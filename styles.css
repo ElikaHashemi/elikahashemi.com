@@ -74,6 +74,7 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 .edu { grid-column: 9 / span 4; padding-top: 12px; display: flex; flex-direction: column; gap: 4px; }
 .edu .school { font-size: 18px; }
 .edu .degree { font-size: 15px; line-height: 1.4; color: var(--muted); }
+.edu .degree + .degree { margin-top: -4px; }
 
 .footer { padding: 24px var(--pad) 32px; font-size: 14px; color: var(--muted); }
 
