@@ -54,9 +54,8 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 .gallery .half { grid-column: span 3; }
 
 /* Studio */
-.lede { max-width: 640px; margin-top: 20px; font-size: 19px; line-height: 1.5; color: var(--muted); }
 .work { display: flex; align-items: flex-end; margin-top: 80px; }
-.work:first-of-type { margin-top: 56px; }
+.work:first-of-type { margin-top: 0; }
 .work figcaption { width: 236px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; font-style: normal; }
 .work .t { font-size: 22px; font-style: italic; color: var(--ink); }
 .work .m { font-size: 15px; color: var(--muted); }
@@ -99,7 +98,8 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
   .section { padding-bottom: 64px; }
   .section > h2 { font-size: 32px; padding-top: 16px; }
   .job { padding: 24px 0; }
-  .work, .work:first-of-type { margin-top: 56px; }
+  .work { margin-top: 56px; }
+  .work:first-of-type { margin-top: 0; }
   .gallery { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .gallery img, .gallery .half, .gallery .full, .gallery .wide, .gallery .solo { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
   .gallery .tall { grid-column: 1 / -1; aspect-ratio: 2 / 3; height: auto; min-height: 0; }
