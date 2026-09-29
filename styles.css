@@ -1,0 +1,114 @@
+:root {
+  --paper: #F3F2EE;
+  --ink: #1B1A17;
+  --muted: #5C5850;
+  --rule: #D3CFC6;
+  --pad: clamp(20px, 6.6vw, 96px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Garamond, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--ink); }
+a:hover { color: var(--muted); }
+h1, h2, p, figure, dl, dd { margin: 0; }
+
+.nav { display: flex; justify-content: flex-end; gap: 32px; padding: 36px var(--pad) 0; font-size: 18px; }
+.nav a { text-decoration: none; padding: 10px 0; }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px;
+  align-items: end; padding: 72px var(--pad) 128px;
+}
+.hero-text { grid-column: 1 / span 6; padding: 0 48px 40px 0; display: flex; flex-direction: column; gap: 28px; }
+h1 { font-size: 64px; font-weight: 400; line-height: 1.05; }
+.roles > div { display: grid; grid-template-columns: 96px 150px minmax(0, 1fr); column-gap: 14px; align-items: baseline; padding: 12px 0; }
+.roles dt { font-size: 15px; color: var(--muted); }
+.roles .what { font-size: 16px; color: var(--muted); }
+.roles .where { font-size: 21px; }
+.hero-painting { grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 12px; }
+.hero-painting img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
+
+/* Sections */
+.section { padding: 0 var(--pad) 128px; }
+.section > h2 { border-top: 1px solid var(--ink); padding-top: 20px; font-size: 40px; font-weight: 400; }
+.job { padding: 36px 0; }
+.job .org { font-size: 18px; }
+.job .title { font-size: 15px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+
+/* Morgan gallery */
+.gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
+.gallery img { grid-column: span 2; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.gallery .full { grid-column: span 6; aspect-ratio: 2 / 1; }
+.gallery .wide { grid-column: span 4; aspect-ratio: 3 / 2; }
+.gallery .tall { grid-column: span 2; aspect-ratio: auto; height: 0; min-height: 100%; }
+.gallery .half { grid-column: span 3; }
+
+/* Studio */
+.lede { max-width: 640px; margin-top: 20px; font-size: 19px; line-height: 1.5; color: var(--muted); }
+.work { display: flex; align-items: flex-end; margin-top: 80px; }
+.work:first-of-type { margin-top: 56px; }
+.work figcaption { width: 236px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; font-style: normal; }
+.work .t { font-size: 22px; font-style: italic; color: var(--ink); }
+.work .m { font-size: 15px; color: var(--muted); }
+.stages { display: flex; gap: 12px; margin-left: 32px; }
+.stages img { width: 120px; aspect-ratio: 3 / 4; object-fit: cover; }
+.work:has(.final.tall) .stages img { aspect-ratio: 408 / 600; width: 109px; }
+.final { width: 390px; aspect-ratio: 3 / 4; object-fit: cover; margin-left: auto; }
+.final.tall { width: 354px; aspect-ratio: 408 / 600; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; padding-bottom: 96px; }
+.contact > h2 { grid-column: 1 / -1; border-top: none; padding-top: 0; }
+.contact { border-top: 1px solid var(--ink); margin: 0 var(--pad); padding: 20px 0 96px; }
+.contact > h2 { grid-column: 1 / span 4; }
+.links { grid-column: 5 / span 4; display: flex; flex-direction: column; gap: 10px; font-size: 20px; padding-top: 10px; }
+.edu { grid-column: 9 / span 4; padding-top: 12px; font-size: 17px; line-height: 1.5; color: var(--muted); }
+
+.footer { padding: 24px var(--pad) 32px; font-size: 14px; color: var(--muted); }
+
+/* Tablet: studio rows wrap */
+@media (max-width: 1180px) {
+  .work { flex-wrap: wrap; gap: 16px; }
+  .work figcaption { width: 100%; }
+  .stages { margin-left: 0; }
+  .final, .final.tall { margin-left: 0; }
+}
+
+/* Phone */
+@media (max-width: 760px) {
+  .nav { gap: 20px; padding-top: 20px; font-size: 17px; }
+  .hero { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 32px; padding-top: 20px; padding-bottom: 64px; }
+  .hero-text { padding: 0; gap: 20px; }
+  h1 { font-size: 44px; }
+  .roles > div { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; }
+  .roles dt, .roles .what { display: inline; font-size: 14px; }
+  .roles > div { flex-direction: row; flex-wrap: wrap; column-gap: 6px; }
+  .roles dt::after { content: " ·"; }
+  .roles .where { width: 100%; font-size: 20px; }
+  .section { padding-bottom: 64px; }
+  .section > h2 { font-size: 32px; padding-top: 16px; }
+  .job { padding: 24px 0; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .gallery img, .gallery .half { grid-column: span 1; }
+  .gallery .full, .gallery .wide, .gallery .tall { grid-column: span 2; }
+  .gallery .tall { aspect-ratio: 2 / 3; height: auto; min-height: 0; }
+  .work { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 56px; }
+  .work figcaption { order: 3; }
+  .stages { gap: 8px; }
+  .stages img, .work:has(.final.tall) .stages img { width: calc((100% - 24px) / 4); }
+  .final, .final.tall { width: 100%; }
+  .contact { display: flex; flex-direction: column; gap: 16px; padding-bottom: 56px; }
+  .links { padding-top: 0; gap: 4px; font-size: 19px; }
+  .links a { padding: 10px 0; }
+  .edu { padding-top: 0; font-size: 16px; }
+}
