@@ -100,10 +100,9 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
   .section > h2 { font-size: 32px; padding-top: 16px; }
   .job { padding: 24px 0; }
   .work, .work:first-of-type { margin-top: 56px; }
-  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .gallery img, .gallery .half { grid-column: span 1; }
-  .gallery .full, .gallery .wide, .gallery .tall, .gallery .solo { grid-column: span 2; }
-  .gallery .tall { aspect-ratio: 2 / 3; height: auto; min-height: 0; }
+  .gallery { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .gallery img, .gallery .half, .gallery .full, .gallery .wide, .gallery .solo { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+  .gallery .tall { grid-column: 1 / -1; aspect-ratio: 2 / 3; height: auto; min-height: 0; }
   .contact { display: flex; flex-direction: column; gap: 16px; padding-bottom: 56px; }
   .links { padding-top: 0; gap: 4px; font-size: 19px; }
   .links a { padding: 10px 0; }
