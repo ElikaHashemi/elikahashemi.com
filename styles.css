@@ -50,6 +50,8 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 .job { padding: 36px 0; }
 .job .org { font-size: 18px; }
 .job .title { font-size: 15px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+.job .about { max-width: 640px; margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+.job .about p { font-size: 19px; line-height: 1.55; text-wrap: pretty; }
 
 /* Morgan gallery */
 .gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
@@ -110,6 +112,8 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
   .section { padding-bottom: 64px; }
   .section > h2 { font-size: 32px; padding-top: 16px; }
   .job { padding: 24px 0; }
+  .job .about { margin-top: 18px; gap: 12px; }
+  .job .about p { font-size: 17px; }
   .work { margin-top: 56px; }
   .work:first-of-type { margin-top: 0; }
   .gallery { grid-template-columns: minmax(0, 1fr); gap: 8px; }
