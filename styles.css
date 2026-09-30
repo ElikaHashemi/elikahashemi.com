@@ -50,10 +50,10 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 .job { padding: 36px 0; }
 .job .org { font-size: 18px; }
 .job .title { font-size: 15px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
-.intro { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: start; margin-top: 24px; }
-.intro img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-.job .about { max-width: 640px; display: flex; flex-direction: column; gap: 14px; }
-.job .about p { font-size: 19px; line-height: 1.55; text-wrap: pretty; }
+.intro { display: flow-root; max-width: 1100px; margin-top: 24px; }
+.intro img { float: left; width: 55%; aspect-ratio: 3 / 2; object-fit: cover; margin: 6px 40px 20px 0; }
+.job .about { display: block; }
+.job .about p { font-size: 19px; line-height: 1.55; text-wrap: pretty; margin: 0 0 14px; }
 
 /* Morgan gallery */
 .gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
@@ -90,7 +90,6 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 
 /* Tablet: studio rows wrap */
 @media (max-width: 1180px) {
-  .intro { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .work { flex-direction: column; align-items: stretch; gap: 10px; }
   .work figcaption { width: 100%; order: 3; }
   .stages { margin-left: 0; gap: 8px; }
@@ -115,8 +114,9 @@ figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
   .section { padding-bottom: 64px; }
   .section > h2 { font-size: 32px; padding-top: 16px; }
   .job { padding: 24px 0; }
-  .intro { margin-top: 18px; gap: 18px; }
-  .job .about { gap: 12px; }
+  .intro { margin-top: 18px; }
+  .intro img { float: none; width: 100%; margin: 0 0 18px; }
+  .job .about p { margin-bottom: 12px; }
   .job .about p { font-size: 17px; }
   .work { margin-top: 56px; }
   .work:first-of-type { margin-top: 0; }
